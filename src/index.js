@@ -1,15 +1,6 @@
-import React, { Component } from 'react'
-import ReactDom from 'react-dom'
-import './index.css'
-
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <h1>Hello World!</h1>
-            </div>
-        )
-    }
-}
+import React from "react"
+import ReactDom from "react-dom"
+import App from "./app"
+import "./index.css"
 
 ReactDom.render(<App />, document.getElementById("root"))
