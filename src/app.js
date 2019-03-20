@@ -3,13 +3,6 @@ import Table from "./table"
 
 class App extends Component {
     render() {
-        return (
-            <div className="container">
-                <h1>Hello World!</h1>
-                <Table characterData={characters} />
-            </div>
-        )
-
         const characters = [
             {
                 name: 'Charlie',
@@ -28,6 +21,13 @@ class App extends Component {
                 job: 'Bartender',
             },
         ]
+        
+        return (
+            <div className="container">
+                <h1>Hello World!</h1>
+                <Table characterData={characters} />
+            </div>
+        )
     }
 }
 

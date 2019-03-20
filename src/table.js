@@ -3,10 +3,12 @@ import React, { Component } from "react"
 class Table extends Component {
     render() {
         return (
-            <table class="table table-sm">
-                <TableHeader />
-                <TableBody />
-            </table>
+            <div class="table-responsive">
+                <table class="table">
+                    <TableHeader />
+                    <TableBody />
+                </table>
+            </div>
         )
     }
 }
