@@ -2,13 +2,13 @@ import React, { Component } from "react"
 
 class Table extends Component {
     render() {
+        const { characterData } = this.props
+        
         return (
-            <div class="table-responsive">
-                <table class="table">
-                    <TableHeader />
-                    <TableBody />
-                </table>
-            </div>
+            <table class="table table-sm">
+                <TableHeader />
+                <TableBody characterData={characterData} />
+            </table>
         )
     }
 }
