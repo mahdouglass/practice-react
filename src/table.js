@@ -12,7 +12,15 @@ class Table extends Component {
 }
 
 const TableHeader = () => {
-    return <thead />
+    return (
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Job</th>
+            </tr>
+        </thead>
+    )
 }
 
 const TableBody = () => {
