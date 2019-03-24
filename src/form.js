@@ -24,10 +24,16 @@ class Form extends Component {
         const { name, job } = this.state
         return (
             <form>
-                <label>Name</label>
-                <input type="text" name="name" value={name} onChange={this.handleChange} />
-                <label>Job</label>
-                <input type="text" name="job" value={job} onChange={this.handleChange} />
+                <div className="row">
+                    <div className="col-md-6">
+                        <label>Name</label><br/>
+                        <input type="text" name="name" value={name} onChange={this.handleChange} />
+                    </div>
+                    <div className="col-md-6">
+                        <label>Job</label><br/>
+                        <input type="text" name="job" value={job} onChange={this.handleChange} />
+                    </div>
+                </div>
             </form>
         )
     }
