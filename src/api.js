@@ -6,8 +6,10 @@ class App extends Component {
     }
 
     // Code is run after component has been added to DOM
-    afterComponentLoaded() {
+    componentDidMount() {
         const url="https://en.wikipedia.org/w/api.php?action=opensearch&search=astronomy&format=json&origin=*"
+
+        fetch(url)
     }
     
 
