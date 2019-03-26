@@ -10,8 +10,9 @@ class App extends Component {
         const url="https://en.wikipedia.org/w/api.php?action=opensearch&search=astronomy&format=json&origin=*"
 
         fetch(url)
+            .then(response => response.json())
+            .then(data => this.setState({ data }))
     }
-    
 
     render() {
         return (
