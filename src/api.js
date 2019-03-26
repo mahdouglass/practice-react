@@ -4,7 +4,9 @@ class App extends Component {
     state = {
         data: [],
     }
-    function() {
+
+    // Code is run after component has been added to DOM
+    afterComponentLoaded() {
         const url="https://en.wikipedia.org/w/api.php?action=opensearch&search=astronomy&format=json&origin=*"
     }
     
