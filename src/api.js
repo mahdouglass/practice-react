@@ -11,14 +11,16 @@ class App extends Component {
 
         fetch(url)
             .then(response => response.json())
-            .then(data => this.setState({ data }))
+            .then(result => this.setState({ data: result }))
     }
 
     render() {
+        const { data } = this.state
+        const result = data.map((entry, index) => {
+            return <li key={index}>{entry}</li>
+        })
         return (
-            <div className="container">
-            
-            </div>
+            <ul>{result}</ul>
         )
     }
 }
