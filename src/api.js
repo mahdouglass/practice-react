@@ -26,10 +26,10 @@ class App extends Component {
             return <p>Loading...</p>
         }
         const result = data.map((entry, index) => {
-            return <li key={index}>{entry}</li>
+            return <p key={index}>{entry}</p>
         })
         return (
-            <ul>{result}</ul>
+            <div className="container">{result}</div>
         )
     }
 }
