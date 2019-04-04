@@ -25,9 +25,17 @@ class Game extends Component {
     }
 
     render () {
+        const winner = calculateWinner(this.state.squares);
+        let status;
+        if (winner) {
+            status = 'Winner: ' + winner;
+        } else {
+            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        }
         return (
             <div className="game">
                 <div className="game-board">
+                    <div className="status">{status}</div>
                     <Board />
                 </div>
             </div>
