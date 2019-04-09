@@ -25,10 +25,11 @@ class Form extends Component {
                 <div className="form-group">
                     <label>
                         Name:
-                        <input type="text" 
+                        <input 
+                            type="text" 
                             placeholder="Name" 
                             name="name"
-                            value={this.state.value}
+                            value={this.state.name}
                             onChange={this.handleChange}
                         />
                     </label>
@@ -36,32 +37,64 @@ class Form extends Component {
                 <div className="form-group">
                     <label>
                         Email:
-                        <input type="text" placeholder="Email" />
+                        <input 
+                            type="text" 
+                            placeholder="Email"
+                            name="email" 
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                        />
                     </label>
                 </div>
                 <div className="form-group">
                     <label>
                         Street:
-                        <input type="text" placeholder="Street" />
+                        <input 
+                            type="text" 
+                            placeholder="Street" 
+                            name="street"
+                            value={this.state.street}
+                            onChange={this.handleChange}
+                        />
                     </label>
                     <label>
                         City:
-                        <input type="text" placeholder="City" />
+                        <input 
+                            type="text" 
+                            placeholder="City" 
+                            name="city"
+                            value={this.state.city}
+                            onChange={this.handleChange}
+                        />
                     </label>
                     <label>
                         State:
-                        <select>
+                        <select
+                            name="state"
+                            value={this.state.state}
+                        >
                             <option>State</option>
                             <option>Ohio</option>
                         </select>
                     </label>
                     <label>
                         Zipcode:
-                        <input type="text" placeholder="Zipcode" />
+                        <input 
+                            type="text" 
+                            placeholder="Zipcode" 
+                            name="zipcode"
+                            value={this.state.zipcode}
+                            onChange={this.handleChange}
+                        />
                     </label>
                 </div>
                 <div className="form-group">
-                    <textarea placeholder="Message..." />
+                    <textarea 
+                        placeholder="Message..." 
+                        name="message"
+                        value={this.state.message}
+                        onChange={this.handleChange}
+                    />
                 </div>
                 <button type="submit">Submit</button>
             </form>
