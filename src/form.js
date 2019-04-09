@@ -60,6 +60,9 @@ class Form extends Component {
                         <input type="text" placeholder="Zipcode" />
                     </label>
                 </div>
+                <div className="form-group">
+                    <textarea placeholder="Message..." />
+                </div>
                 <button type="submit">Submit</button>
             </form>
         )
