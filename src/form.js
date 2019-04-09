@@ -1,13 +1,30 @@
 import React, { Component } from 'react'
 
 class Form extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: '',
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
     render() {
         return (
             <form>
                 <div className="form-group">
                     <label>
                         Name:
-                        <input type="text" placeholder="Name" />
+                        <input type="text" 
+                            placeholder="Name" 
+                            name="name"
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                        />
                     </label>
                 </div>
                 <div className="form-group">
