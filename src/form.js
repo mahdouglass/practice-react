@@ -27,7 +27,10 @@ class Form extends Component {
                     </label>
                     <label>
                         State:
-                        <input type="text" placeholder="State" />
+                        <select>
+                            <option>State</option>
+                            <option>Ohio</option>
+                        </select>
                     </label>
                     <label>
                         Zipcode:
