@@ -17,3 +17,8 @@ input, textarea, select {
   width: 100%;
   padding: 10px 20px;
 }
+
+.error-message {
+  color: #cc0000;
+  margin-bottom: 12px;
+}

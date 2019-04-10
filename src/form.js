@@ -4,31 +4,45 @@ class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            email: '',
-            street: '',
-            city: '',
-            state: '',
-            zipcode: '',
-            message: ''
+            fields: {},
+            errors: {},
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        const target = event.target;
-        const value = target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-
+        let fields = this.state.fields;
+        fields[event.target.name] = event.target.value;
         this.setState({
-            [name]: value
+            fields
         });
     }
 
     handleSubmit(event) {
-        alert("A name was submitted: " + this.state.value);
         event.preventDefault();
+        if (this.validateForm()) {
+            let fields = {};
+            fields["name"] = "";
+            this.setState({fields:fields});
+            alert("Form submitted");
+        }
+    }
+
+    validateForm() {
+        let fields = this.state.fields;
+        let errors = {};
+        let formIsValid = true;
+
+        if (!fields["name"]) {
+            formIsValid = false;
+            errors["name"] = "*Please enter your name.";
+        }
+
+        this.setState({
+            errors: errors
+        });
+        return formIsValid;
     }
 
     render() {
@@ -41,10 +55,11 @@ class Form extends Component {
                             type="text" 
                             placeholder="Name" 
                             name="name"
-                            value={this.state.name}
+                            value={this.state.fields.name}
                             onChange={this.handleChange}
                         />
                     </label>
+                    <p className="error-message">{this.state.errors.name}</p>
                 </div>
                 <div className="form-group">
                     <label>
