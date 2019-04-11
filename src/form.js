@@ -6,6 +6,7 @@ class Form extends Component {
         this.state = {
             fields: {},
             errors: {},
+            isEnabled: false,
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -138,7 +139,7 @@ class Form extends Component {
                         onChange={this.handleChange}
                     />
                 </div>
-                <button type="submit">Submit</button>
+                <button disabled={!this.isEnabled} type="submit">Submit</button>
             </form>
         )
     }
