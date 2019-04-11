@@ -6,7 +6,6 @@ class Form extends Component {
         this.state = {
             fields: {},
             errors: {},
-            isEnabled: false,
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +25,9 @@ class Form extends Component {
             let fields = {};
             fields["name"] = "";
             fields["email"] = "";
-            this.setState({fields:fields});
+            this.setState({
+                fields:fields
+            });
             alert("Form submitted");
         }
     }
@@ -35,15 +36,24 @@ class Form extends Component {
         let fields = this.state.fields;
         let errors = {};
         let formIsValid = true;
+        let isEnabled = true;
 
         if (!fields["name"]) {
             formIsValid = false;
             errors["name"] = "*Please enter your name.";
+
+            this.setState({
+                isEnabled: false
+            });
         }
 
         if (!fields["email"]) {
             formIsValid = false;
             errors["email"] = "Please enter your email.";
+
+            this.setState({
+                isEnabled: false
+            });
         }
 
         if (typeof fields["email"] !== "undefined") {
@@ -52,12 +62,21 @@ class Form extends Component {
                 formIsValid = false;
                 errors["email"] = "Please enter a valid email.";
             }
+            this.setState({
+                isEnabled: false
+            });
+        }
+
+        else {
+            this.setState({
+                isEnabled: true
+            });
         }
 
         this.setState({
-            errors: errors
+            errors: errors,
         });
-        return formIsValid;
+        return formIsValid, isEnabled;
     }
 
     render() {
