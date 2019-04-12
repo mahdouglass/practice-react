@@ -6,6 +6,7 @@ class Form extends Component {
         this.state = {
             fields: {},
             errors: {},
+            isEnabled: true,
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +27,7 @@ class Form extends Component {
             fields["name"] = "";
             fields["email"] = "";
             this.setState({
-                fields:fields
+                fields: fields
             });
             alert("Form submitted");
         }
@@ -36,14 +37,14 @@ class Form extends Component {
         let fields = this.state.fields;
         let errors = {};
         let formIsValid = true;
-        let isEnabled = true;
+        let buttonEnabled = this.state.fields;
 
         if (!fields["name"]) {
             formIsValid = false;
             errors["name"] = "*Please enter your name.";
 
             this.setState({
-                isEnabled: false
+                isEnabled: !buttonEnabled
             });
         }
 
@@ -52,7 +53,7 @@ class Form extends Component {
             errors["email"] = "Please enter your email.";
 
             this.setState({
-                isEnabled: false
+                isEnabled: !buttonEnabled
             });
         }
 
@@ -63,20 +64,14 @@ class Form extends Component {
                 errors["email"] = "Please enter a valid email.";
             }
             this.setState({
-                isEnabled: false
-            });
-        }
-
-        else {
-            this.setState({
-                isEnabled: true
+                isEnabled: !buttonEnabled
             });
         }
 
         this.setState({
             errors: errors,
         });
-        return formIsValid, isEnabled;
+        return formIsValid;
     }
 
     render() {
@@ -108,7 +103,7 @@ class Form extends Component {
                     </label>
                     <p className="error-message">{this.state.errors.email}</p>
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label>
                         Street:
                         <input 
@@ -149,7 +144,7 @@ class Form extends Component {
                             onChange={this.handleChange}
                         />
                     </label>
-                </div>
+                </div> */}
                 <div className="form-group">
                     <textarea 
                         placeholder="Message..." 
@@ -158,7 +153,7 @@ class Form extends Component {
                         onChange={this.handleChange}
                     />
                 </div>
-                <button disabled={!this.isEnabled} type="submit">Submit</button>
+                <button disabled={this.state.isEnabled} type="submit">Submit</button>
             </form>
         )
     }
