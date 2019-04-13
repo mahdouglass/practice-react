@@ -1,11 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Input extends Component {
-    render() {
-        return {
-
-        }
-    }
+const Input = () => {
+    <div className="form-group">
+        <label></label>
+        <input 
+            type=""
+            name=""
+            value=""
+            placeholder=""
+        />
+    </div>
 }
 
 export default Input;
