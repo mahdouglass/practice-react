@@ -70,6 +70,7 @@ class Form extends Component {
 
         this.setState({
             errors: errors,
+            isEnabled: buttonEnabled
         });
         return formIsValid;
     }
