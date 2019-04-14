@@ -5,16 +5,17 @@ class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: "",
         }
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    // handleChange(event) {
-    //     let fields = this.state.fields;
-    //     fields[event.target.name] = event.target.value;
-    //     this.setState({
-    //         fields
-    //     });
-    // }
+    handleInputChange(event) {
+        let value = event.target.value;
+        this.setState({
+            name: value
+        });
+    }
 
     // handleSubmit(event) {
     //     event.preventDefault();
@@ -76,7 +77,10 @@ class Form extends Component {
             <form onSubmit={this.handleSubmit}>
                 <Input 
                     type={"text"}
+                    name={"name"}
+                    value={"this.state.name"}
                     placeholder={"Name"}
+                    handleChange={this.handleInputChange}
                 />
                 <button type="submit">Submit</button>
             </form>
