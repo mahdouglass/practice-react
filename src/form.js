@@ -75,6 +75,7 @@ class Form extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <Input 
+                    type={"text"}
                     placeholder={"Name"}
                 />
                 <button type="submit">Submit</button>
