@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import Input from "./components/input";
 
 class Form extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         fields: {},
-    //         errors: {},
-    //         isEnabled: true,
-    //     }
-    //     this.handleChange = this.handleChange.bind(this);
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+        }
+    }
 
     // handleChange(event) {
     //     let fields = this.state.fields;
@@ -79,7 +74,9 @@ class Form extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <Input />
+                <Input 
+                    placeholder={"Name"}
+                />
                 <button type="submit">Submit</button>
             </form>
         )

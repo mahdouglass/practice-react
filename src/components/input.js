@@ -1,14 +1,14 @@
 import React from "react";
 
-const Input = () => {
+const Input = (props) => {
+    console.log(props.placeholder);
     return (
         <div className="form-group">
             <label></label>
             <input 
                 type=""
                 name=""
-                value=""
-                placeholder=""
+                placeholder={props.placeholder}
             />
         </div>
     )
