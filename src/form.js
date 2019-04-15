@@ -5,16 +5,18 @@ class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
+            newUser: {
+                name: "",
+            }
         }
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleInputChange(event) {
         let value = event.target.value;
-        this.setState({
-            name: value
-        });
+        this.setState( prevState => ({ newUser: 
+            {...prevState.newUser, name: value}
+        }));
     }
 
     // handleSubmit(event) {
