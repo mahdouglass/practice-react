@@ -78,7 +78,7 @@ class Form extends Component {
                 <Input 
                     type={"text"}
                     name={"name"}
-                    value={"this.state.name"}
+                    value={this.state.name}
                     placeholder={"Name"}
                     handleChange={this.handleInputChange}
                 />
