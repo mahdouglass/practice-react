@@ -16,63 +16,8 @@ class Form extends Component {
         let value = event.target.value;
         this.setState( prevState => ({ newUser: 
             {...prevState.newUser, name: value}
-        }));
+        }), () => console.log(this.state.newUser));
     }
-
-    // handleSubmit(event) {
-    //     event.preventDefault();
-    //     if (this.validateForm()) {
-    //         let fields = {};
-    //         fields["name"] = "";
-    //         fields["email"] = "";
-    //         this.setState({
-    //             fields: fields
-    //         });
-    //         alert("Form submitted");
-    //     }
-    // }
-
-    // validateForm() {
-    //     let fields = this.state.fields;
-    //     let errors = {};
-    //     let formIsValid = true;
-    //     let buttonEnabled = this.state.fields;
-
-    //     if (!fields["name"]) {
-    //         formIsValid = false;
-    //         errors["name"] = "*Please enter your name.";
-
-    //         this.setState({
-    //             isEnabled: !buttonEnabled
-    //         });
-    //     }
-
-    //     if (!fields["email"]) {
-    //         formIsValid = false;
-    //         errors["email"] = "Please enter your email.";
-
-    //         this.setState({
-    //             isEnabled: !buttonEnabled
-    //         });
-    //     }
-
-    //     if (typeof fields["email"] !== "undefined") {
-    //         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-    //         if (!pattern.test(fields["email"])) {
-    //             formIsValid = false;
-    //             errors["email"] = "Please enter a valid email.";
-    //         }
-    //         this.setState({
-    //             isEnabled: !buttonEnabled
-    //         });
-    //     }
-
-    //     this.setState({
-    //         errors: errors,
-    //         isEnabled: buttonEnabled
-    //     });
-    //     return formIsValid;
-    // }
 
     render() {
         return (
@@ -80,14 +25,14 @@ class Form extends Component {
                 <Input 
                     type={"text"}
                     name={"name"}
-                    value={this.state.name}
+                    value={this.state.newUser.name}
                     placeholder={"Name"}
                     handleChange={this.handleInputChange}
                 />
                 <Input 
                     type={"text"}
                     name={"email"}
-                    value={this.state.name}
+                    value={this.state.newUser.name}
                     placeholder={"Email"}
                     handleChange={this.handleInputChange}
                 />
