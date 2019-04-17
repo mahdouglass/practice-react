@@ -2,17 +2,15 @@ import React, { Component } from 'react';
 import Input from "../components/input";
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            newUser: {
-                name: "",
-                email: "",
-            }
+    state = {
+        newUser: {
+            name: "",
+            email: "",
         }
-        this.handleName = this.handleName.bind(this);
-        this.handleEmail = this.handleEmail.bind(this);
     }
+        
+    handleName = this.handleName.bind(this);
+    handleEmail = this.handleEmail.bind(this);
 
     handleName(event) {
         let value = event.target.value;
