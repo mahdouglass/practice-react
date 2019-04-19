@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from "../components/input";
+import Select from "../components/select";
 
 class Form extends Component {
     state = {
@@ -43,6 +44,7 @@ class Form extends Component {
                     placeholder={"Email"}
                     handleChange={this.handleEmail}
                 />
+                <Select />
                 <button type="submit">Submit</button>
             </form>
         )
