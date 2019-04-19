@@ -44,7 +44,12 @@ class Form extends Component {
                     placeholder={"Email"}
                     handleChange={this.handleEmail}
                 />
-                <Select />
+                <Select 
+                    name={"State"}
+                    value=""
+                    placeholder={"Select State"}
+                    handleChange=""
+                />
                 <button type="submit">Submit</button>
             </form>
         )
