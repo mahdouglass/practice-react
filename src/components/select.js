@@ -4,8 +4,8 @@ const Select = (props) => {
     return(
         <div className="form-group">
             <select
-                name=""
-                value=""
+                name={props.name}
+                value={props.value}
                 onChange=""
             >
                 <option></option>

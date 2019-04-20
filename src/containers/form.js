@@ -7,6 +7,7 @@ class Form extends Component {
         newUser: {
             name: "",
             email: "",
+            state: "",
         }
     }
         
