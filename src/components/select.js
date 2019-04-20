@@ -8,7 +8,7 @@ const Select = (props) => {
                 value={props.value}
                 onChange={props.handleChange}
             >
-                <option></option>
+                <option disabled>{props.placeholder}</option>
             </select>
         </div>
     )
