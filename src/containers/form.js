@@ -13,6 +13,7 @@ class Form extends Component {
         
     handleName = this.handleName.bind(this);
     handleEmail = this.handleEmail.bind(this);
+    handleState = this.handleSelect.bind(this);
 
     handleName(event) {
         let value = event.target.value;
@@ -26,6 +27,15 @@ class Form extends Component {
         this.setState( prevState => ({ newUser:
             {...prevState.newUser, email: value}
         }));
+    }
+
+    handleSelect(event) {
+        let value = event.target.value;
+        let name = event.target.state;
+        this.setState( prevState => ({ newUser:
+            {...prevState.newUser, [name]: value
+            }
+        }))
     }
 
     render() {
@@ -49,7 +59,7 @@ class Form extends Component {
                     name={"State"}
                     value=""
                     placeholder={"Select State"}
-                    handleChange=""
+                    handleChange={this.handleSelect}
                 />
                 <button type="submit">Submit</button>
             </form>

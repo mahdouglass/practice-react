@@ -6,7 +6,7 @@ const Select = (props) => {
             <select
                 name={props.name}
                 value={props.value}
-                onChange=""
+                onChange={props.handleChange}
             >
                 <option></option>
             </select>
