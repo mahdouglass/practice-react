@@ -11,6 +11,7 @@ const Input = (props) => {
                 placeholder={props.placeholder}
                 onChange={props.handleChange}
             />
+            <label className="error-message"></label>
         </div>
     )
 }

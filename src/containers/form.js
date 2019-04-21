@@ -43,14 +43,14 @@ class Form extends Component {
             <form onSubmit={this.handleSubmit}>
                 <Input 
                     type={"text"}
-                    name={"name"}
+                    name={"Name"}
                     value={this.state.newUser.name}
                     placeholder={"Name"}
                     handleChange={this.handleName}
                 />
                 <Input 
                     type={"text"}
-                    name={"email"}
+                    name={"Email"}
                     value={this.state.newUser.email}
                     placeholder={"Email"}
                     handleChange={this.handleEmail}

@@ -21,4 +21,5 @@ input, textarea, select {
 .error-message {
   color: #cc0000;
   margin-bottom: 12px;
+  display: none;
 }
