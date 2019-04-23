@@ -3,13 +3,22 @@ import Input from "../components/input";
 import Select from "../components/select";
 import Checkbox from "../components/checkbox";
 
+const OPTIONS = ["One", "Two", "Three"];
+
 class Form extends Component {
     state = {
         newUser: {
             name: "",
             email: "",
             state: "",
-        }
+        },
+        checkboxes: OPTIONS.reduce(
+            (options, option) => ({
+              ...options,
+              [option]: false
+            }),
+            {}
+        )
     }
         
     handleName = this.handleName.bind(this);
@@ -39,6 +48,43 @@ class Form extends Component {
         }))
     }
 
+    selectAllCheckboxes = isSelected => {
+        Object.keys(this.state.checkboxes).forEach(checkbox => {
+          this.setState(prevState => ({
+            checkboxes: {
+              ...prevState.checkboxes,
+              [checkbox]: isSelected
+            }
+          }));
+        });
+    };
+
+    selectAll = () => this.selectAllCheckboxes(true);
+
+    deselectAll = () => this.selectAllCheckboxes(false);
+
+    handleCheckboxChange = changeEvent => {
+        const { name } = changeEvent.target;
+
+        this.setState(prevState => ({
+        checkboxes: {
+            ...prevState.checkboxes,
+            [name]: !prevState.checkboxes[name]
+        }
+        }));
+    };
+
+    createCheckbox = option => (
+        <Checkbox
+          label={option}
+          isSelected={this.state.checkboxes[option]}
+          onCheckboxChange={this.handleCheckboxChange}
+          key={option}
+        />
+    );
+
+    createCheckboxes = () => OPTIONS.map(this.createCheckbox);
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -62,7 +108,7 @@ class Form extends Component {
                     placeholder={"Select State"}
                     handleChange={this.handleSelect}
                 />
-                <Checkbox />
+                {this.createCheckbox()}
                 <button type="submit">Submit</button>
             </form>
         )

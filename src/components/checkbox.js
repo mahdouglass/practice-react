@@ -1,15 +1,19 @@
 import React from "react";
 
-const Checkbox = (props) => {
-    return (
-        <div className="form-group">
-            <label>Active</label>
-            <input
-                name="Subscribe"
-                type="checkbox"
-            />
-        </div>
-    )
-}
+const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
+    <div className="form-check">
+      <label>
+        <input
+          type="checkbox"
+          name={label}
+          checked={isSelected}
+          onChange={onCheckboxChange}
+          className="form-check-input"
+        />
+        {label}
+      </label>
+    </div>
+  );
+  
 
 export default Checkbox;
