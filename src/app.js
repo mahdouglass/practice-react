@@ -8,7 +8,7 @@ class App extends Component {
         return (
             <div className="container">
                 <Person name="Lucy" age="20" />
-                <Person name="Hazel" age="25" />
+                <Person name="Hazel" age="25">I like to run.</Person>
             </div>
         )
     }
