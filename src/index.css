@@ -2,24 +2,3 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 20px;
 }
-
-ul {
-  list-style: none;
-}
-
-/* Form */
-label {
-  width: 100%;
-}
-
-input, textarea, select {
-  display: block;
-  width: 100%;
-  padding: 10px 20px;
-}
-
-.error-message {
-  color: #cc0000;
-  margin-bottom: 12px;
-  display: none;
-}
