@@ -6,8 +6,12 @@ class App extends Component {
         textInput: "Abc"
     }
 
-    textOutputLength = () => {
-        const textLength = this.state.textInput.split("");
+    textOutputLength = (event) => {
+        this.setState({
+            textInput: event.target.value
+        });
+
+        const textLength = this.state.textInput.length;
         console.log(textLength);
     }
 
