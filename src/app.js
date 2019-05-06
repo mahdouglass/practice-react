@@ -3,18 +3,12 @@ import "./index.css";
 
 class App extends Component {
     state = {
-        text: [
-            {textInput: ""}
-        ]
-        
+        textInput: "Abc"
     }
 
-    textOutputLength = (event) => {
-        this.setState({
-            text: [
-                {textInput: event.target.value}
-            ]
-        });
+    textOutputLength = () => {
+        const textLength = this.state.textInput.split("");
+        console.log(textLength);
     }
 
     render() {
@@ -22,9 +16,9 @@ class App extends Component {
             <div className="App">
                 <input 
                     placeholder="Type text"
-                    changed={this.textOutputLength}
+                    onChange={this.textOutputLength}
                 />
-                <p></p>
+                <p>{this.state.textInput}</p>
                 <ol>
                     <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
                     <li>Create a new component (=> ValidationComponent) which receives the text length as a prop</li>
