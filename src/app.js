@@ -1,80 +1,21 @@
 import React, { Component } from "react"
 import "./index.css";
-import Person from "./person/person";
 
 class App extends Component {
-    state = {
-        persons: [
-            { id: "1", name: "Lucy", age: 20 },
-            { id: "2", name: "Hazel", age: 25 },
-            { id: "3", name: "Rosco", age: 17}
-        ],
-        otherState: 'another value',
-        showPersons: false
-    };
-
-    nameChangedHandler = (event, id) => {
-        const personIndex = this.state.persons.findIndex(p => {
-            return p.id === id;
-        });
-
-        const person = {
-            ...this.state.persons[personIndex]
-        };
-
-        person.name = event.target.value;
-
-        const persons = [...this.state.persons];
-        persons[personIndex] = person;
-
-        this.setState({persons: persons});
-    }
-
-    deletePersonHandler = (personIndex) => {
-        const persons = [...this.state.persons];
-        persons.splice(personIndex, 1);
-        this.setState({persons: persons});
-    }
-
-    togglePersonsHandler = () => {
-        const doesShow = this.state.showPersons;
-        this.setState({showPersons: !doesShow});
-    }
-
     render () {
-        const style = {
-            backgroundColor: "white",
-            border: "1px solid blue",
-            padding: "8px",
-            margin: "auto",
-            cursor: "pointer"
-        };
-
-        let persons = null;
-
-        if (this.state.showPersons) {
-            persons = (
-                <div>
-                    {this.state.persons.map((person, index) => {
-                        return <Person 
-                            click={() => this.deletePersonHandler(index)}
-                            name={person.name}
-                            age={person.age} 
-                            key={person.id}
-                            changed={(event) => this.nameChangedHandler(event, person.id)} />
-                    })}
-                </div>
-            );
-        }
-
         return (
-            <div className="container">
-                <button 
-                    onClick={this.togglePersonsHandler}
-                    style={style}>Toggle Persons</button>
-                {persons}
+            <div className="App">
+                <ol>
+                    <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
+                    <li>Create a new component (=> ValidationComponent) which receives the text length as a prop</li>
+                    <li>Inside the ValidationComponent, either output "Text too short" or "Text long enough" depending on the text length (e.g. take 5 as a minimum length)</li>
+                    <li>Create another component (=> CharComponent) and style it as an inline box (=> display: inline-block, padding: 16px, text-align: center, margin: 16px, border: 1px solid black).</li>
+                    <li>Render a list of CharComponents where each CharComponent receives a different letter of the entered text (in the initial input field) as a prop.</li>
+                    <li>When you click a CharComponent, it should be removed from the entered text.</li>
+                </ol>
+                <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
             </div>
-        )
+        );
     }
 }
 
