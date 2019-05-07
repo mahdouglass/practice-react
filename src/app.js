@@ -4,7 +4,8 @@ import ValidationComponent from "./components/ValidationComponent";
 
 class App extends Component {
     state = {
-        textInput: "Abc"
+        textInput: "Abc",
+        textLength: 0
     }
 
     textOutputLength = (event) => {
@@ -14,6 +15,7 @@ class App extends Component {
 
         const textLength = this.state.textInput.length;
         console.log(textLength);
+        this.setState({textLength: textLength});
     }
 
     render() {
@@ -23,6 +25,7 @@ class App extends Component {
                     placeholder="Type text"
                     onChange={this.textOutputLength}
                 />
+                <p>{this.state.textLength}</p>
                 <ValidationComponent />
                 <ol>
                     <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
