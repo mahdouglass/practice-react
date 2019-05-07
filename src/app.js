@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "./index.css";
+import ValidationComponent from "./components/ValidationComponent";
 
 class App extends Component {
     state = {
@@ -22,7 +23,7 @@ class App extends Component {
                     placeholder="Type text"
                     onChange={this.textOutputLength}
                 />
-                <p>{this.state.textInput}</p>
+                <ValidationComponent />
                 <ol>
                     <li>Create an input field (in App component) with a change listener which outputs the length of the entered text below it (e.g. in a paragraph).</li>
                     <li>Create a new component (=> ValidationComponent) which receives the text length as a prop</li>
