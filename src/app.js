@@ -15,8 +15,8 @@ class App extends Component {
     }
 
     render() {
-        const textChar = this.state.textInput.split("").map(char => {
-            return <CharComponent character={char} />
+        const textChar = this.state.textInput.split("").map((char, index) => {
+            return <CharComponent character={char} key={index} />
         });
         return (
             <div className="App">
