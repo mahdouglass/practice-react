@@ -12,7 +12,7 @@ const CharComponent = (props) => {
     return (
         <span 
             style={style}
-        >{props.value}</span>
+        >{props.character}</span>
     )
 }
 export default CharComponent;
