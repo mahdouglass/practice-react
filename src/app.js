@@ -14,9 +14,19 @@ class App extends Component {
         });
     }
 
+    removeCharHandler = (textIndex) => {
+        console.log("remove text");
+        const text = [...this.state.textInput];
+        text.splice(textIndex, 1);
+        this.state({textInput: text});
+    }
+
     render() {
         const textChar = this.state.textInput.split("").map((char, index) => {
-            return <CharComponent character={char} key={index} />
+            return <CharComponent 
+                character={char} 
+                key={index} 
+                click={() => this.removeCharHandler(index)}/>
         });
         return (
             <div className="App">
