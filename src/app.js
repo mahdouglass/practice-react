@@ -15,10 +15,10 @@ class App extends Component {
     }
 
     removeCharHandler = (textIndex) => {
-        console.log("remove text");
-        const text = [...this.state.textInput];
+        const text = this.state.textInput.split("");
         text.splice(textIndex, 1);
-        this.state({textInput: text});
+        const updatedText = text.join("");
+        this.setState({textInput: updatedText});
     }
 
     render() {
@@ -26,7 +26,7 @@ class App extends Component {
             return <CharComponent 
                 character={char} 
                 key={index} 
-                click={() => this.removeCharHandler(index)}/>
+                clicked={() => this.removeCharHandler(index)}/>
         });
         return (
             <div className="App">

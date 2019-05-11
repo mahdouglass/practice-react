@@ -12,6 +12,7 @@ const CharComponent = (props) => {
     return (
         <span 
             style={style}
+            onClick={props.clicked}
         >{props.character}</span>
     )
 }
