@@ -67,8 +67,11 @@ class App extends Component {
             );
         }
 
+        let classes = ["text-red", "text-bold"].join(" ");
+
         return (
             <div className="container">
+                <p className={classes}>This is really working!</p>
                 <button 
                     onClick={this.togglePersonsHandler}
                     style={style}>Toggle Persons</button>
