@@ -70,7 +70,10 @@ class App extends Component {
             style.backgroundColor = "red";
         }
 
-        let classes = ["text-red", "text-bold"].join(" ");
+        const classes = [];
+        if (this.state.persons.length <= 2) {
+            classes.push("text-red");
+        }
 
         return (
             <div className="container">
