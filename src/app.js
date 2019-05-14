@@ -48,7 +48,11 @@ class App extends Component {
             border: "1px solid blue",
             padding: "8px",
             margin: "auto",
-            cursor: "pointer"
+            cursor: "pointer",
+            ":hover": {
+                backgroundColor: "lightgreen",
+                color: "black"
+            }
         };
 
         let persons = null;
@@ -66,6 +70,12 @@ class App extends Component {
                     })}
                 </div>
             );
+
+            style.backgroundColor = "red";
+            style[":hover"] = {
+                backgroundColor: "salmon",
+                color: "black"
+            }
         }
 
         const classes = [];
