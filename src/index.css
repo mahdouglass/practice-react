@@ -14,3 +14,24 @@ body {
 .textBold {
   font-weight: bold;
 }
+
+button {
+  border: 1px solid darkblue;
+  padding: 15px;
+  background-color: green;
+  color: white;
+}
+
+button:hover {
+  background-color: lightgreen;
+  color: black;
+}
+
+button.Red {
+  background-color: red;
+}
+
+button.Red:hover {
+  background-color: salmon;
+  color: black;
+}
