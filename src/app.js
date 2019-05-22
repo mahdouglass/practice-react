@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import classes from "./index.css";
-import Person from "./person/person";
+import Person from "./components/Persons/Person/Person";
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 
 class App extends Component {
