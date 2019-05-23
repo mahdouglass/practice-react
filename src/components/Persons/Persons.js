@@ -9,7 +9,7 @@ const persons = (props) => (
             name={person.name}
             age={person.age} 
             changed={(event) => props.nameChangedHandler(event, person.id)} />
-    });
+    })
 );
 
 export default persons;
