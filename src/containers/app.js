@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Persons from "../components/Persons/Persons";
+import Cockpit from "../components/Cockpit/Cockpit";
 
 class App extends Component {
     state = {
@@ -44,19 +45,21 @@ class App extends Component {
         let persons = null;
 
         if (this.state.showPersons) {
-            persons = (
-                <div>
-                    <Persons 
+            persons = (<Persons 
                         persons={this.state.persons}
                         clicked={this.deletePersonHandler}
                         changed={this.nameChangedHandler}
                     />
-                </div>
             );
         }
 
         return (
             <div>
+                <Cockpit 
+                    showPersons={this.state.showPersons} 
+                    persons={this.state.persons} 
+                    clicked={this.togglePersonsHandler}
+                />
                 {persons}
             </div>
         )
