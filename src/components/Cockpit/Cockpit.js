@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "../../index.css";
+import classes from "./Cockpit.css";
 
 const cockpit = (props) => {
     const assignedClasses = [];
@@ -16,7 +16,7 @@ const cockpit = (props) => {
     }
 
     return (
-        <div>
+        <div className={classes.container}>
             <p className={assignedClasses.join(" ")}>This is really working!</p>
             <button 
                 className={btnClass}
