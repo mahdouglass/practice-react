@@ -85,7 +85,7 @@ class App extends Component {
         }
 
         return (
-            <WithClass classes={classes.App}>
+            <React.Fragment>
                 <button onClick={() => {
                     this.setState({ showCockpit: false});
                 }}>Remove Cockpit</button>
@@ -97,9 +97,9 @@ class App extends Component {
                     />
                 ) : null }
                 {persons}
-            </WithClass>
+            </React.Fragment>
         )
     }
 }
 
-export default App;
+export default WithClass(App, classes.App);
