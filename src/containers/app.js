@@ -8,7 +8,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         console.log("[App.js] constructor");
-    }
+    };
 
     state = {
         persons: [
@@ -19,25 +19,26 @@ class App extends Component {
         otherState: 'another value',
         showPersons: false,
         showCockpit: true,
+        authenticated: false,
     };
 
     static getDerivedStateFromProps(props, state) {
         console.log("[App.js] getDerivedStateFromProps", props);
         return state;
-    }
+    };
 
     componentDidMount() {
         console.log('[App.js] componentDidMount');
-    }
+    };
 
     shouldComponentUpdate(nextProps, nextState) {
         console.log('[App.js] shouldComponentUpdate');
         return true;
-    }
+    };
 
     componentDidUpdate() {
         console.log('[App.js] componentDidUpdate');
-    }
+    };
 
     nameChangedHandler = (event, id) => {
         const personIndex = this.state.persons.findIndex(p => {
@@ -54,18 +55,22 @@ class App extends Component {
         persons[personIndex] = person;
 
         this.setState({persons: persons});
-    }
+    };
 
     deletePersonHandler = (personIndex) => {
         const persons = [...this.state.persons];
         persons.splice(personIndex, 1);
         this.setState({persons: persons});
-    }
+    };
 
     togglePersonsHandler = () => {
         const doesShow = this.state.showPersons;
         this.setState({showPersons: !doesShow});
-    }
+    };
+
+    loginHandler = () => {
+        this.setState({authenticated: true});
+    };
 
     render () {
         console.log("[App.js] render");
@@ -90,6 +95,7 @@ class App extends Component {
                         showPersons={this.state.showPersons} 
                         personsLength={this.state.persons.length} 
                         clicked={this.togglePersonsHandler}
+                        login={this.loginHandler}
                     />
                 ) : null }
                 {persons}
