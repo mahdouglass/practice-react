@@ -18,6 +18,7 @@ class Person extends Component {
         console.log('[Person.js] rendering...')
         return (
             <React.Fragment>
+                {this.props.isAuth ? <p>Successfully authenticated!</p> : <p>Please try again.</p>}
                 <div className={classes.Person}>
                     <p onClick={this.props.click}>
                         Hi, I'm {this.props.name} and I am {this.props.age} years old!
