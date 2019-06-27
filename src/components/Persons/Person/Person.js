@@ -20,9 +20,10 @@ class Person extends Component {
         return (
             <React.Fragment>
                 <AuthContext.Consumer>
-                    {(context) =>  context.authenticated ? <p>Successfully authenticated!</p> : <p>Please try again.</p>}
+                    {(context) =>  
+                        context.authenticated ? <p>Successfully authenticated!</p> : <p>Please try again.</p>
+                    }
                 </AuthContext.Consumer>
-               
                 <div className={classes.Person}>
                     <p onClick={this.props.click}>
                         Hi, I'm {this.props.name} and I am {this.props.age} years old!
