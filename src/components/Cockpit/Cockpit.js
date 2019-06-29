@@ -9,7 +9,6 @@ const cockpit = (props) => {
         console.log('[Cockpit.js] useEffect');
         toggleButtonRef.current.click();
         const timer = setTimeout(() => {
-            alert('Saved data');
         }, 1000);
         return () => {
             clearTimeout(timer);
