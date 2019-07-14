@@ -28,6 +28,17 @@ class App extends Component {
                     <li>Button</li>
                     <li>Price</li>
                 </ul>
+                <hr />
+                <h2>State</h2>
+                <ul>
+                    <li>Ingredients</li>
+                    <li>Purchased (boolean)</li>
+                    <li>Total Price</li>
+                </ul>
+                <h2>Stateful Container</h2>
+                <ul>
+                    <li>Burger Builder</li>
+                </ul>
             </React.Fragment>
         )
     }
