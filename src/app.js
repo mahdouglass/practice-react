@@ -30,18 +30,6 @@ class App extends Component {
                     <li>Button</li>
                     <li>Price</li>
                 </ul>
-<<<<<<< HEAD:src/app.js
-                <hr />
-                <h2>State</h2>
-                <ul>
-                    <li>Ingredients</li>
-                    <li>Purchased (boolean)</li>
-                    <li>Total Price</li>
-                </ul>
-                <h2>Stateful Container</h2>
-                <ul>
-                    <li>Burger Builder</li>
-=======
                 <h2>Code Tree</h2>
                 <p>App -> Layout Component -> Toolbar, Side Drawer (mobile), Backdrop, props<i>.children</i> (dynamic component)</p>
                 <h3>Toolbar</h3>
@@ -82,7 +70,6 @@ class App extends Component {
                         </ul>
                         <li>Checkout</li>
                     </ul>
->>>>>>> 3f3be7054bb9cc64e3a664c1c4ad7e1d1b8a5f5b:src/containers/app.js
                 </ul>
             </React.Fragment>
         )
