@@ -9,13 +9,14 @@ const controls = [
     {label: 'Meat', type: 'meat'},
 ]
 
-const buildControls = () => (
+const buildControls = props => (
     <div className={classes.buildControls}>
         {controls.map(ctrl => (
             <BuildControl 
                 key={ctrl.label}
                 label={ctrl.label}
                 type={ctrl.type}
+                addMore={() => props.addIngredient(ctrl.type)}
             />
         ))}
     </div>
