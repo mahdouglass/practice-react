@@ -3,7 +3,7 @@ import BuildControl from "./BuildControl/BuildControl";
 import classes from "./BuildControls.css";
 
 const controls = [
-    {label: 'Salad', type: 'salad'},
+    {label: 'Lettuce', type: 'lettuce'},
     {label: 'Bacon', type: 'bacon'},
     {label: 'Cheese', type: 'cheese'},
     {label: 'Meat', type: 'meat'},
@@ -22,7 +22,9 @@ const buildControls = props => (
                 disabled={props.disabled[ctrl.type]}
             />
         ))}
-        <button className={classes.orderButton}>Order Now</button>
+        <button className={classes.orderButton}
+            disabled={!props.canOrder}
+        >Order Now</button>
     </div>
 );
 
