@@ -22,6 +22,7 @@ class BurgerBuilder extends Component {
     },
     totalPrice: 4,
     canOrder: false,
+    ordering: false,
   }
 
   updateOrderState = (ingredients) => {
@@ -72,6 +73,10 @@ class BurgerBuilder extends Component {
     this.updateOrderState(updateIngredients);
   }
 
+  orderHandler = () => {
+    this.setState({ordering: true});
+  }
+
   render () {
     const disabledInfo = {
       ...this.state.ingredients
@@ -83,7 +88,7 @@ class BurgerBuilder extends Component {
 
     return (
       <React.Fragment>
-        <Modal>
+        <Modal show={this.state.ordering}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
@@ -91,6 +96,7 @@ class BurgerBuilder extends Component {
           addIngredient={this.addIngredientHandler}
           removeIngredient={this.removeIngredientHandler}
           canOrder={this.state.canOrder}
+          ordered={this.orderHandler}
           disabled={disabledInfo}
           price={this.state.totalPrice}
         />
