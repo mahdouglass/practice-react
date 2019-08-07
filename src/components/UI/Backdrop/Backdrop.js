@@ -1,9 +1,7 @@
 import React from "react";
 
 const backdrop = (props) => (
-  <div>
-    <p>backdrop</p>
-  </div>
+  props.show ? <div></div> : null
 );
 
 export default backdrop;
