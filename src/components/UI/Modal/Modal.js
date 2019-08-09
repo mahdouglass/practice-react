@@ -5,7 +5,7 @@ import Backdrop from "../Backdrop/Backdrop";
 
 const modal = (props) => (
   <React.Fragment>
-    <Backdrop show={props.show} />
+    <Backdrop show={props.show} clicked={props.closeModal}/>
     <div className={classes.modal}
       style={{
         transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
