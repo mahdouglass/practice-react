@@ -1,5 +1,7 @@
 import React from "react";
 
+import Button from "../../UI/Button/Button";
+
 const orderSummary = (props) => {
   const ingredientSummary = Object.keys(props.ingredients)
     .map(igKey => {
@@ -18,6 +20,8 @@ const orderSummary = (props) => {
         {ingredientSummary}
       </ul>
       <p>Continue to checkout?</p>
+      <Button btnType="danger" clicked={props.cancelOrder}>Cancel</Button>
+      <Button btnType="success" clicked={props.continueOrder}>Continue</Button>
     </React.Fragment>
   );
 };
