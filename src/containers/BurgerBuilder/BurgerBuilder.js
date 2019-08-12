@@ -98,7 +98,8 @@ class BurgerBuilder extends Component {
       <React.Fragment>
         <Modal show={this.state.ordering} closeModal={this.cancelOrderHandler}>
           <OrderSummary
-            ingredients={this.state.ingredients} 
+            ingredients={this.state.ingredients}
+            price={this.state.totalPrice}
             cancelOrder={this.cancelOrderHandler}
             continueOrder={this.continueOrderHandler}
           />
