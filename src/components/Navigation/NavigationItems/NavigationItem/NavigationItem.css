@@ -1,4 +1,4 @@
-.nav-item {
+.navItem {
   margin: 0;
   box-sizing: border-box;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.nav-item a {
+.navItem a {
   color: #fff;
   text-decoration: none;
   height: 100%;
@@ -16,9 +16,9 @@
   display: block;
 }
 
-.nav-item a:hover,
-.nav-item a:active,
-.nav-item a.active {
+.navItem a:hover,
+.navItem a:active,
+.navItem a.active {
   background-color: #8f5c2c;
   border-bottom: 4px solid #40a4cb;
   color: #fff;
