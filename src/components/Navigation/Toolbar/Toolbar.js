@@ -11,7 +11,7 @@ const toolbar = () => (
       <div className={classes.logo}>
         <Logo />
       </div>
-      <nav>
+      <nav className={classes.desktopOnly}>
         <NavigationItems />
       </nav>
     </header>
