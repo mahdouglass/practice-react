@@ -8,7 +8,7 @@ import classes from "./SideDrawer.css";
 const sideDrawer = (props) => {
   return (
     <React.Fragment>
-      <Backdrop show />
+      <Backdrop show={props.open} clicked={props.close} />
       <div className={classes.sideDrawer}>
         <div className={classes.logo}>
           <Logo />
