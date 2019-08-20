@@ -4,10 +4,11 @@ import Logo from "../../Logo/Logo";
 import classes from "./Toolbar.css";
 
 import NavigationItems from "../NavigationItems/NavigationItems";
+import DrawerMenu from "../SideDrawer/DrawerMenu/DrawerMenu";
 
-const toolbar = () => (
+const toolbar = props => (
     <header className={classes.toolbar}>
-      <div>Menu</div>
+      <DrawerMenu click={props.drawerMenuClick} />
       <div className={classes.logo}>
         <Logo />
       </div>
