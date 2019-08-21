@@ -8,7 +8,7 @@ import DrawerMenu from "../SideDrawer/DrawerMenu/DrawerMenu";
 
 const toolbar = props => (
     <header className={classes.toolbar}>
-      <DrawerMenu click={props.drawerMenuClick} />
+      <DrawerMenu click={props.drawerMenuClick} className={classes.mobileOnly} />
       <div className={classes.logo}>
         <Logo />
       </div>
