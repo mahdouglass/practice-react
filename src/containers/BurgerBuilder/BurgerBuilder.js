@@ -104,7 +104,7 @@ class BurgerBuilder extends Component {
         this.setState({loading: false, ordering: false});
       })
       .catch(err => {
-        this.setState({loading: false});
+        this.setState({loading: false, ordering: false});
       });
   }
 
