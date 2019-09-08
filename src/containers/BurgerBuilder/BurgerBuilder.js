@@ -17,16 +17,18 @@ const INGREDIENT_PRICES = {
 
 class BurgerBuilder extends Component {
   state = {
-    ingredients: {
-      lettuce: 0,
-      bacon: 0,
-      cheese: 0,
-      meat: 0,
-    },
+    ingredients: null,
     totalPrice: 4,
     canOrder: false,
     ordering: false,
     loading: false,
+  }
+
+  componentDidMount() {
+    axios.get('https://react-my-burger-ec254.firebaseio.com/ingredients.json')
+      .then(res => {
+        this.setState({ingredients: res.data});
+      });
   }
 
   updateOrderState = (ingredients) => {
@@ -117,30 +119,41 @@ class BurgerBuilder extends Component {
     for (let key in disabledInfo) {
       disabledInfo[key] = disabledInfo[key] <= 0;
     }
-    let orderSummary = <OrderSummary
-      ingredients={this.state.ingredients}
-      price={this.state.totalPrice}
-      cancelOrder={this.cancelOrderHandler}
-      continueOrder={this.continueOrderHandler}
-    />;
+
+    let orderSummary = null;
+
+    let burger = <Spinner />;
+
+    if (this.state.ingredients) {
+      burger = (
+        <React.Fragment>
+          <Burger ingredients={this.state.ingredients} />
+          <BurgerControls
+            addIngredient={this.addIngredientHandler}
+            removeIngredient={this.removeIngredientHandler}
+            canOrder={this.state.canOrder}
+            ordered={this.orderHandler}
+            disabled={disabledInfo}
+            price={this.state.totalPrice}
+          />
+        </React.Fragment>
+      );
+      orderSummary = <OrderSummary
+        ingredients={this.state.ingredients}
+        price={this.state.totalPrice}
+        cancelOrder={this.cancelOrderHandler}
+        continueOrder={this.continueOrderHandler} />;
+    }
     if (this.state.loading) {
       orderSummary = <Spinner />;
     }
-
+    
     return (
       <React.Fragment>
         <Modal show={this.state.ordering} closeModal={this.cancelOrderHandler}>
           {orderSummary}
         </Modal>
-        <Burger ingredients={this.state.ingredients} />
-        <BurgerControls
-          addIngredient={this.addIngredientHandler}
-          removeIngredient={this.removeIngredientHandler}
-          canOrder={this.state.canOrder}
-          ordered={this.orderHandler}
-          disabled={disabledInfo}
-          price={this.state.totalPrice}
-        />
+        {burger}
       </React.Fragment>
     )
   }
