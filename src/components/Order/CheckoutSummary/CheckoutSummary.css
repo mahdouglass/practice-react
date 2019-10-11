@@ -9,3 +9,8 @@
         width: 500px;
     }
 }
+
+.burgerWrapper {
+    width: 100%;
+    margin: auto;
+}
