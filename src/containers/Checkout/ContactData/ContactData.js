@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Button from '../../../components/UI/Button/Button';
+import './contactData';
 
 class ContactData extends Component {
     state = {
@@ -16,7 +17,7 @@ class ContactData extends Component {
         return (
             <div>
                 <h4>Enter your contact information</h4>
-                <form>
+                <form className="contactData">
                     <input type="text" name="name" placeholder="Name" />
                     <input type="text" name="email" placeholder="Email" />
                     <input type="text" name="street" placeholder="Street" />
