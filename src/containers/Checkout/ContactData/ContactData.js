@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Button from '../../../components/UI/Button/Button';
-import './contactData';
+import './ContactData.css';
 
 class ContactData extends Component {
     state = {
