@@ -13,6 +13,10 @@ class ContactData extends Component {
         }
     }
 
+    orderHandler = (event) => {
+        event.preventDefault();
+    }
+
     render () {
         return (
             <div className={classes.contactData}>
@@ -22,7 +26,7 @@ class ContactData extends Component {
                     <input className={classes.input} type="text" name="email" placeholder="Email" />
                     <input className={classes.input}  type="text" name="street" placeholder="Street" />
                     <input className={classes.input} type="text" name="postal" placeholder="Postal Code" />
-                    <Button btnType="success">Order Now</Button>
+                    <Button btnType="success"clicked={this.orderHandler}>Order Now</Button>
                 </form>
             </div>
         );
