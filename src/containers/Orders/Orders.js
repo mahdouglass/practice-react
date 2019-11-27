@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from '../../axios-orders';
 
 import Order from '../../components/Order/Order';
+import errorHandler from '../../hoc/ErrorHandler/ErrorHandler';
 
 class Orders extends Component {
     state = {
@@ -18,7 +19,7 @@ class Orders extends Component {
                         id: key
                     });
                 }
-                this.setState({loading: false, orders: fetchedOrders})
+                this.setState({loading: false, orders: fetchedOrders});
             })
             .catch(err => {
                 this.setState({loading: false})
@@ -28,11 +29,16 @@ class Orders extends Component {
     render () {
         return (
             <React.Fragment>
-                <Order />
-                <Order />
+                {this.state.orders.map(order => (
+                    <Order 
+                        key={order.id}
+                        ingredients={order.ingredients}
+                        price={order.price}
+                    />
+                ))}
             </React.Fragment>
         );
     }
 }
 
-export default Orders;
+export default errorHandler(Orders, axios);
