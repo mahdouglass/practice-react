@@ -5,7 +5,7 @@ const input = (props) => {
 
     switch (props.inputType) {
         case ('input'):
-            inputElement = <input />
+            inputElement = <input {...props} />
             break;
         case ('textarea'):
             inputElement = <textarea />
