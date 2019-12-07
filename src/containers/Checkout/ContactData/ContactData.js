@@ -8,11 +8,49 @@ import Input from '../../../components/UI/Input/Input';
 
 class ContactData extends Component {
     state = {
-        name: '',
-        email: '',
-        address: {
-            street: '',
-            postalCode: ''
+        orderForm: {
+            name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Enter name'
+                },
+                value: 'John McClane',
+            },
+            street: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Enter street'
+                },
+                value: '100 1st St',
+            },
+            zipCode: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Zipcode'
+                },
+                value: '12345',
+            },
+            email: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'email',
+                    placeholder: 'Enter email'
+                },
+                value: 'abc@123.com',
+            },
+            deliveryMethod: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        {value: 'fastest', displayValue: 'Fastest'},
+                        {value: 'cheapest', displayValue: 'Cheapest'},
+                    ]
+                },
+                value: '',
+            },
         },
         loading: false,
     }
@@ -23,15 +61,6 @@ class ContactData extends Component {
         const order = {
             ingredients: this.props.ingredients,
             price: this.props.price,
-            customer: {
-                name: 'John McClane',
-                address: {
-                street: '100 1st Street',
-                zipCode: '12345'
-                },
-                email: 'test@abc.com'
-            },
-            deliveryMethod: 'delivery'
         }
         axios.post('/orders.json', order)
         .then(res => {
