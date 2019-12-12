@@ -17,7 +17,11 @@ const input = (props) => {
                 <select
                     className={classes.inputElement}
                     value={props.value}>
-                    <option></option>
+                    {props.elementConfig.options.map(option => (
+                        <option value={option.value}>
+                            {option.displayValue}
+                        </option>
+                    ))}
                 </select>
             );
             break;
