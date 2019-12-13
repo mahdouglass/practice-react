@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './input.css';
+import classes from './Input.css';
 
 const input = (props) => {
     let inputElement = null;
@@ -18,7 +18,7 @@ const input = (props) => {
                     className={classes.inputElement}
                     value={props.value}>
                     {props.elementConfig.options.map(option => (
-                        <option value={option.value}>
+                        <option key={option.value} value={option.value}>
                             {option.displayValue}
                         </option>
                     ))}
