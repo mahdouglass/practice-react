@@ -15,7 +15,7 @@ class ContactData extends Component {
                     type: 'text',
                     placeholder: 'Enter name'
                 },
-                value: 'John McClane',
+                value: '',
             },
             street: {
                 elementType: 'input',
@@ -23,7 +23,7 @@ class ContactData extends Component {
                     type: 'text',
                     placeholder: 'Enter street'
                 },
-                value: '100 1st St',
+                value: '',
             },
             zipCode: {
                 elementType: 'input',
@@ -31,7 +31,7 @@ class ContactData extends Component {
                     type: 'text',
                     placeholder: 'Zipcode'
                 },
-                value: '12345',
+                value: '',
             },
             email: {
                 elementType: 'input',
@@ -39,7 +39,7 @@ class ContactData extends Component {
                     type: 'email',
                     placeholder: 'Enter email'
                 },
-                value: 'abc@123.com',
+                value: '',
             },
             deliveryMethod: {
                 elementType: 'select',
