@@ -156,7 +156,10 @@ class ContactData extends Component {
                         changed={(event) => this.inputChangedHandler(event, formElement.id)}
                     />
                 ))}
-                <Button btnType="success"clicked={this.orderHandler}>Order Now</Button>
+                <Button btnType="success"
+                    clicked={this.orderHandler}
+                    disabled={!this.state.formIsValid}
+                    >Order Now</Button>
             </form>
         );
         if (this.state.loading) {
